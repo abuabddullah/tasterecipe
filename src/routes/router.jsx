@@ -1,17 +1,18 @@
 import { createBrowserRouter } from "react-router-dom";
+import ProtectedRoute from "../components/shared/ProtectedRoute";
+import DashboardLayout from "../layouts/DashboardLayout";
 import MainLayout from "../layouts/MainLayout";
+import About from "../pages/About";
+import Contact from "../pages/Contact";
+import Courses from "../pages/Courses";
 import ErrorPage from "../pages/ErrorPage";
 import Home from "../pages/Home";
 import Login from "../pages/Login";
-import Register from "../pages/Register";
-import DashboardLayout from "../layouts/DashboardLayout";
-import Dashboard from "../pages/Dashboard";
-import ProtectedRoute from "../components/shared/ProtectedRoute";
-import Profile from "../pages/Profile";
-import About from "../pages/About";
-import Courses from "../pages/Courses";
 import Products from "../pages/Products";
-import Contact from "../pages/Contact";
+import Profile from "../pages/Profile";
+import Register from "../pages/Register";
+import AddProducts from "../pages/dashboard/AddProducts";
+import ManageRecipes from "../pages/dashboard/ManageRecipes";
 
 export const router = createBrowserRouter([
   {
@@ -66,17 +67,16 @@ export const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <Dashboard />,
-      },
-      {
-        path: "/dashboard/profile",
         element: <Profile />,
       },
-
-      /* {
-        path: "/dashboard/settings",
-        element: <Settings />,
-      }, */
+      {
+        path: "/dashboard/addRecipe",
+        element: <AddProducts />,
+      },
+      {
+        path: "/dashboard/manageRecipes",
+        element: <ManageRecipes />,
+      },
     ],
   },
 ]);

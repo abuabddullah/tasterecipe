@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, Outlet } from "react-router-dom";
+import { Link, NavLink, Outlet } from "react-router-dom";
 
 const DashboardLayout = () => {
   return (
@@ -30,22 +30,28 @@ const DashboardLayout = () => {
             </label>
           </div>
           <div>
-          <Link to="/">🔙</Link>  <span className="flex-1 px-2 mx-2 md:text-3xl font-bold">Dashboard</span>
+            <Link to="/">🔙</Link>{" "}
+            <span className="flex-1 px-2 mx-2 md:text-3xl font-bold">
+              Dashboard
+            </span>
           </div>
           <div className="flex-none hidden lg:block">
             <ul className="menu menu-horizontal">
               {/* Navbar menu content here */}
               <li>
-                <a>Navbar Item 1</a>
+                <Link to="/dashboard">Profile</Link>
               </li>
               <li>
-                <Link to="/dashboard/profile">Profile</Link>
+                <NavLink to="/dashboard/addRecipe">Add Recipe</NavLink>
+              </li>
+              <li>
+                <NavLink to="/dashboard/manageRecipes">Manage Recipes</NavLink>
               </li>
             </ul>
           </div>
         </div>
         {/* Page content here */}
-        <Outlet /> contentrrertertert
+        <Outlet />
       </div>
       <div className="drawer-side">
         <label
@@ -55,12 +61,16 @@ const DashboardLayout = () => {
         ></label>
         <ul className="menu p-4 w-80 min-h-full bg-base-200">
           {/* Sidebar content here */}
+
           <li>
-            <a>Sidebar Item 1</a>
+            <Link to="/dashboard">Profile</Link>
           </li>
           <li>
-            <a>Sidebar Item 2</a>
+            <NavLink to="/dashboard/addRecipe">Add Recipe</NavLink>
           </li>
+              <li>
+                <NavLink to="/dashboard/manageRecipes">Manage Recipes</NavLink>
+              </li>
         </ul>
       </div>
     </div>

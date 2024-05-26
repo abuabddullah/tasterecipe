@@ -5,7 +5,7 @@ import RecepiCard from "../shared/RecepiCard";
 const OurProducts = () => {
   const [recipes, setRecipes] = useState();
 
-  // fetching-1: inside useEffect by fetch.then.then
+  // fetching-1: inside useEffect by fetch.then.then 
   useEffect(() => {
     fetch("http://localhost:3000/recipes")
       .then((res) => res.json())

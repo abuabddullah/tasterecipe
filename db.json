@@ -111,6 +111,34 @@
       "description": "A hearty Japanese noodle soup with meat, vegetables, and broth.",
       "image": "https://source.unsplash.com/200x200/?junkfood",
       "category": "Japanese"
+    },
+    {
+      "id": "10",
+      "title": "Halua",
+      "price": "12",
+      "category": "Indian",
+      "description": "Mojadar"
+    },
+    {
+      "id": "10",
+      "title": "Dhonia Pata",
+      "price": "9",
+      "category": "Thai",
+      "description": "Khubi Moja"
+    },
+    {
+      "id": "11",
+      "title": "Golap Vorta",
+      "price": "40",
+      "category": "Italian",
+      "description": "very taste"
+    },
+    {
+      "id": "10",
+      "title": "Pan Pata",
+      "price": "73",
+      "category": "Italian",
+      "description": "taste"
     }
   ],
   "categories": [
