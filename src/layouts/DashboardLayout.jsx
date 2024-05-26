@@ -1,7 +1,8 @@
 import React from "react";
-import { Link, NavLink, Outlet } from "react-router-dom";
+import { Link, NavLink, Outlet, useNavigate } from "react-router-dom";
 
 const DashboardLayout = () => {
+  const navigate = useNavigate();
   return (
     <div className="drawer">
       <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
@@ -30,7 +31,7 @@ const DashboardLayout = () => {
             </label>
           </div>
           <div>
-            <Link to="/">🔙</Link>{" "}
+            <button onClick={()=>navigate(-1)}>🔙</button>{" "}
             <span className="flex-1 px-2 mx-2 md:text-3xl font-bold">
               Dashboard
             </span>

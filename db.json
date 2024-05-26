@@ -1,14 +1,6 @@
 {
   "recipes": [
     {
-      "id": "1",
-      "title": "Spaghetti Carbonara 2",
-      "price": 12.99,
-      "description": "A classic Italian pasta dish made with eggs, cheese, pancetta, and pepper.",
-      "image": "https://source.unsplash.com/200x200/?junkfood",
-      "category": "Thai"
-    },
-    {
       "id": "2",
       "title": "Chicken Tikka Masala",
       "price": 15.99,
@@ -65,30 +57,6 @@
       "category": "French"
     },
     {
-      "id": "9",
-      "title": "Margherita Pizza",
-      "price": 13.99,
-      "description": "Classic pizza topped with fresh tomatoes, mozzarella cheese, and basil.",
-      "image": "https://source.unsplash.com/200x200/?junkfood",
-      "category": "Italian"
-    },
-    {
-      "id": "10",
-      "title": "Vegetable Stir Fry",
-      "price": 9.99,
-      "description": "A mix of fresh vegetables stir-fried with soy sauce and served over rice.",
-      "image": "https://source.unsplash.com/200x200/?junkfood",
-      "category": "Chinese"
-    },
-    {
-      "id": "11",
-      "title": "Butter Chicken",
-      "price": 16.99,
-      "description": "Tender chicken cooked in a rich, creamy tomato gravy.",
-      "image": "https://source.unsplash.com/200x200/?junkfood",
-      "category": "Indian"
-    },
-    {
       "id": "12",
       "title": "Rogan Josh",
       "price": 17.99,
@@ -113,32 +81,11 @@
       "category": "Japanese"
     },
     {
-      "id": "10",
-      "title": "Halua",
-      "price": "12",
-      "category": "Indian",
-      "description": "Mojadar"
-    },
-    {
-      "id": "10",
-      "title": "Dhonia Pata",
-      "price": "9",
-      "category": "Thai",
-      "description": "Khubi Moja"
-    },
-    {
       "id": "11",
       "title": "Golap Vorta",
       "price": "40",
       "category": "Italian",
       "description": "very taste"
-    },
-    {
-      "id": "10",
-      "title": "Pan Pata",
-      "price": "73",
-      "category": "Italian",
-      "description": "taste"
     }
   ],
   "categories": [

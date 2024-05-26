@@ -1,7 +1,8 @@
+import axios from "axios";
 import React from "react";
 import { Link } from "react-router-dom";
 
-const RecipeRow = ({recipe}) => {
+const RecipeRow = ({ recipe, deleteRecipe }) => {
   return (
     <tr>
       <th>{recipe?.id}</th>
@@ -10,12 +11,17 @@ const RecipeRow = ({recipe}) => {
       <td>{recipe?.category}</td>
       <td className="flex gap-4">
         <Link
-          to={`/dashboard/edit-recipe/${recipe?.id}`}
+          to={`/dashboard/editRecipe/${recipe?.id}`}
           className="btn btn-xs btn-neutral"
         >
           Edit
         </Link>
-        <button className="btn btn-xs btn-error">Delete</button>
+        <button
+          onClick={() => deleteRecipe(recipe?.id)}
+          className="btn btn-xs btn-error"
+        >
+          Delete
+        </button>
       </td>
     </tr>
   );
