@@ -1,8 +1,26 @@
 import React from "react";
-import { Link, NavLink, Outlet, useNavigate } from "react-router-dom";
+import {
+  Link,
+  NavLink,
+  Outlet,
+  useLocation,
+  useNavigate,
+} from "react-router-dom";
 
 const DashboardLayout = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+  console.log(location);
+
+  const handleNavigate = () => {
+    // if pathname contains "editRecipe" then do 1 step back or goto home
+    if (location.pathname.includes("editRecipe")) {
+      // Option 1: Go back one step
+      navigate(-1);
+    } else {
+      navigate("/");
+    }
+  };
   return (
     <div className="drawer">
       <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
@@ -31,7 +49,7 @@ const DashboardLayout = () => {
             </label>
           </div>
           <div>
-            <button onClick={()=>navigate(-1)}>🔙</button>{" "}
+            <button onClick={handleNavigate}>🔙</button>{" "}
             <span className="flex-1 px-2 mx-2 md:text-3xl font-bold">
               Dashboard
             </span>
@@ -69,9 +87,9 @@ const DashboardLayout = () => {
           <li>
             <NavLink to="/dashboard/addRecipe">Add Recipe</NavLink>
           </li>
-              <li>
-                <NavLink to="/dashboard/manageRecipes">Manage Recipes</NavLink>
-              </li>
+          <li>
+            <NavLink to="/dashboard/manageRecipes">Manage Recipes</NavLink>
+          </li>
         </ul>
       </div>
     </div>
