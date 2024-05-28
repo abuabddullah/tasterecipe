@@ -2,7 +2,7 @@ import React from "react";
 
 const RatingSec = () => {
   return (
-    <>
+    <section className="md:py-12">
       <h2 className="text-center m-6 text-2xl md:text-4xl font-bold">Ratings</h2>
       <section className="md:container md:mx-auto m-6 flex justify-center">
         <div className="rating rating-lg rating-half">
@@ -60,7 +60,7 @@ const RatingSec = () => {
           />
         </div>
       </section>
-    </>
+    </section>
   );
 };
 
