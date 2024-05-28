@@ -1,9 +1,24 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { Bounce, toast } from "react-toastify";
 import RecipeRow from "./RecipeRow";
 
 const ManageRecipes = () => {
   const [recipes, setRescipes] = useState();
+
+  const notifyToastify4Delete = () =>
+    toast("🦄 Recipe Deleting Successful!", {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      transition: Bounce,
+    });
+
   useEffect(() => {
     async function load() {
       const data = await axios.get("http://localhost:3000/recipes");
@@ -22,7 +37,8 @@ const ManageRecipes = () => {
           `http://localhost:3000/recipes/${id}`
         );
         if (response.status == 200) {
-          alert("Data deleted successfully!!");
+          // alert("Data deleted successfully!!");
+          notifyToastify4Delete();
 
           // remove deleted datat from ui
           const nonDeletedRecipes = recipes.filter((reCp) => reCp.id !== id);

@@ -1,11 +1,26 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { Bounce, toast } from "react-toastify";
 
 const EditRecipe = () => {
   const { id } = useParams();
   const [recipeDetails, setRecipeDetails] = useState();
   const [categories, setCategories] = useState();
+
+  const notifyToastify4Edit = () =>
+    toast("🦄 Recipe Editing Successful!", {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      transition: Bounce,
+    });
+
 
   useEffect(() => {
     const load = async () => {
@@ -47,7 +62,8 @@ const EditRecipe = () => {
       };
       const res4EditRecipe = await axios.patch(`http://localhost:3000/recipes/${id}`, recipeData);
       if(res4EditRecipe.status == 200){
-        alert("Recipe Edited Successfully!!")
+        // alert("Recipe Edited Successfully!!")
+        notifyToastify4Edit();
       }
     } else {
       alert("Ok! no issues");

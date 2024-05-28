@@ -10,7 +10,6 @@ import {
 const DashboardLayout = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  console.log(location);
 
   const handleNavigate = () => {
     // if pathname contains "editRecipe" then do 1 step back or goto home

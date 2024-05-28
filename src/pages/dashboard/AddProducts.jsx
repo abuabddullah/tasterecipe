@@ -1,9 +1,23 @@
 import axios from "axios";
 import React, { useEffect, useRef, useState } from "react";
+import { Bounce, toast } from "react-toastify";
 
 const AddProducts = () => {
   const [categories, setCategories] = useState();
-  const formRef = useRef(null)
+  const formRef = useRef(null);
+
+  const notifyToastify4AddRecipe = () =>
+    toast("🦄 Recipe Adding Successful!", {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      transition: Bounce,
+    });
 
   useEffect(() => {
     // fetching-3: inside useEffect by async-await+axios
@@ -36,10 +50,14 @@ const AddProducts = () => {
         description,
       };
 
-      const res4CreateRecipe = await axios.post("http://localhost:3000/recipes", recipeData);
+      const res4CreateRecipe = await axios.post(
+        "http://localhost:3000/recipes",
+        recipeData
+      );
       if (res4CreateRecipe.status == 201) {
-        alert("Recipe Created Successfully!!")
-        formRef.current.reset()
+        // alert("Recipe Created Successfully!!");
+        notifyToastify4AddRecipe();
+        formRef.current.reset();
       }
     } else {
       alert("Ok! no issues");
