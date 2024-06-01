@@ -15,3 +15,7 @@
 # axios CRUD
 
 - follow all dashboard pages
+
+
+# buggs to fix
+- আমরা যখন user কে firebase এ login / register এর সাথে সাথে DB এ save করছি সেখানে **_if (userInfo)_** condition use করার ফলে যত বার login করছি ঠিক ততবারই এখানে user এর data DB তে saved হবার চেষ্টা করছে

@@ -84,6 +84,7 @@ import { auth } from "../../firebase.config";
 import SocialLogin from "../components/shared/SocialLogin";
 
 const Register = () => {
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
@@ -96,6 +97,21 @@ const Register = () => {
 
   useEffect(() => {
     if (userInfo) {
+      console.log(userInfo);
+      const userData = {
+        name,
+        email: userInfo?.email,
+        photo: userInfo?.photoURL,
+      };
+      fetch("http://localhost:5000/users", {
+        method: "POST",
+        body: JSON.stringify(userData),
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+        },
+      })
+        .then((response) => response.json())
+        .then((data) => console.log(data));
       navigate("/");
     }
   }, [userInfo, navigate]);
@@ -129,6 +145,19 @@ const Register = () => {
         </div>
         <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
           <form onSubmit={handleRegisterSubmit} className="card-body">
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Name</span>
+              </label>
+              <input
+                type="name"
+                placeholder="name"
+                className="input input-bordered"
+                required
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+              />
+            </div>
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Email</span>
