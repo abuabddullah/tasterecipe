@@ -17,6 +17,21 @@ const SocialLogin = () => {
 
   useEffect(() => {
     if (userInfo) {
+      console.log(userInfo);
+      const userData = {
+        name: userInfo?.displayName,
+        email: userInfo?.email,
+        photo: userInfo?.photoURL,
+      };
+      fetch("http://localhost:5000/users", {
+        method: "POST",
+        body: JSON.stringify(userData),
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+        },
+      })
+        .then((response) => response.json())
+        .then((data) => console.log(data));
       navigate(from, { replace: true });
     }
   }, [userInfo, navigate, from, userLoading]);
