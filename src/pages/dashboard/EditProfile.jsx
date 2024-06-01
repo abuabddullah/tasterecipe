@@ -5,6 +5,7 @@ import { Bounce, toast } from "react-toastify";
 const EditProfile = () => {
   const userData = useLoaderData();
   const formRef = useRef(null);
+  const token = localStorage.getItem("token");
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -27,6 +28,7 @@ const EditProfile = () => {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
+        authorization: `Bearer ${token}`,
       },
       body: JSON.stringify(userInfo4PATCH),
     })

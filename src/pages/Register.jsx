@@ -111,10 +111,13 @@ const Register = () => {
         },
       })
         .then((response) => response.json())
-        .then((data) => console.log(data));
+        .then((data) => {
+          console.log(data);
+          localStorage.setItem("token", data?.token);
+        });
       navigate("/");
     }
-  }, [userInfo, navigate]);
+  }, [userInfo, navigate, name]);
 
   // complete the code for handleRegisterSubmit function
   const handleRegisterSubmit = (e) => {

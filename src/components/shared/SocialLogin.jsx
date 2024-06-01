@@ -4,8 +4,8 @@ import {
   useSignInWithGithub,
   useSignInWithGoogle,
 } from "react-firebase-hooks/auth";
-import { auth } from "../../../firebase.config";
 import { useLocation, useNavigate } from "react-router-dom";
+import { auth } from "../../../firebase.config";
 
 const SocialLogin = () => {
   const [signInWithGoogle] = useSignInWithGoogle(auth);
@@ -31,7 +31,10 @@ const SocialLogin = () => {
         },
       })
         .then((response) => response.json())
-        .then((data) => console.log(data));
+        .then((data) => {
+          console.log(data);
+          localStorage.setItem("token", data?.token);
+        });
       navigate(from, { replace: true });
     }
   }, [userInfo, navigate, from, userLoading]);
