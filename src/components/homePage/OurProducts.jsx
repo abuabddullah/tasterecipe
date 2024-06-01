@@ -7,7 +7,7 @@ const OurProducts = () => {
 
   // fetching-1: inside useEffect by fetch.then.then 
   useEffect(() => {
-    fetch("http://localhost:3000/recipes")
+    fetch("http://localhost:5000/recipes")
       .then((res) => res.json())
       .then((data) => setRecipes(data));
   }, []);

@@ -12,6 +12,7 @@ import Products from "../pages/Products";
 import Profile from "../pages/Profile";
 import Register from "../pages/Register";
 import AddProducts from "../pages/dashboard/AddProducts";
+import EditProfile from "../pages/dashboard/EditProfile";
 import EditRecipe from "../pages/dashboard/EditRecipe";
 import ManageRecipes from "../pages/dashboard/ManageRecipes";
 
@@ -69,6 +70,12 @@ export const router = createBrowserRouter([
       {
         index: true,
         element: <Profile />,
+      },
+      {
+        path: "/dashboard/editProfile/:id",
+        element: <EditProfile />,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/users/get/${params.id}`),
       },
       {
         path: "/dashboard/addRecipe",

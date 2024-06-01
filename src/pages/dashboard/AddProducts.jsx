@@ -22,7 +22,7 @@ const AddProducts = () => {
   useEffect(() => {
     // fetching-3: inside useEffect by async-await+axios
     async function load() {
-      const data = await axios.get("http://localhost:3000/categories");
+      const data = await axios.get("http://localhost:5000/categories");
       if (data?.status === 200) {
         setCategories(data?.data);
       }
@@ -51,7 +51,7 @@ const AddProducts = () => {
       };
 
       const res4CreateRecipe = await axios.post(
-        "http://localhost:3000/recipes",
+        "http://localhost:5000/recipes",
         recipeData
       );
       if (res4CreateRecipe.status == 201) {

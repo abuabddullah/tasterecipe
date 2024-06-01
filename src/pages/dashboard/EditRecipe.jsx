@@ -26,7 +26,7 @@ const EditRecipe = () => {
     const load = async () => {
       // fetch all categories
       const res4Categories = await axios.get(
-        "http://localhost:3000/categories"
+        "http://localhost:5000/categories"
       );
       if (res4Categories.status == 200) {
         setCategories(res4Categories?.data);
@@ -34,7 +34,7 @@ const EditRecipe = () => {
 
       // fetch recipe details of based on id
       const res4RecipeDetails = await axios.get(
-        `http://localhost:3000/recipes/${id}`
+        `http://localhost:5000/recipes/${id}`
       );
       if (res4RecipeDetails?.status === 200) {
         setRecipeDetails(res4RecipeDetails?.data);
@@ -60,7 +60,7 @@ const EditRecipe = () => {
         category,
         description,
       };
-      const res4EditRecipe = await axios.patch(`http://localhost:3000/recipes/${id}`, recipeData);
+      const res4EditRecipe = await axios.patch(`http://localhost:5000/recipes/${id}`, recipeData);
       if(res4EditRecipe.status == 200){
         // alert("Recipe Edited Successfully!!")
         notifyToastify4Edit();

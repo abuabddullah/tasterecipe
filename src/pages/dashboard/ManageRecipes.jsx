@@ -21,7 +21,7 @@ const ManageRecipes = () => {
 
   useEffect(() => {
     async function load() {
-      const data = await axios.get("http://localhost:3000/recipes");
+      const data = await axios.get("http://localhost:5000/recipes");
       if (data?.status === 200) {
         setRescipes(data?.data);
       }
@@ -34,7 +34,7 @@ const ManageRecipes = () => {
       const isDelete = confirm("Are You sure to delete");
       if (isDelete) {
         const response = await axios.delete(
-          `http://localhost:3000/recipes/${id}`
+          `http://localhost:5000/recipes/${id}`
         );
         if (response.status == 200) {
           // alert("Data deleted successfully!!");

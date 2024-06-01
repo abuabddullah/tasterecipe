@@ -1,19 +1,19 @@
 import React, { useEffect, useState } from "react";
-import RecepiCard from "../components/shared/RecepiCard";
 import Categories from "../components/productsPage/Categories";
+import RecepiCard from "../components/shared/RecepiCard";
 
 const Products = () => {
   const [recipes, setRecipes] = useState();
   const [categoris, setCategories] = useState();
   useEffect(() => {
     // fetching-1: inside useEffect by fetch.then.then
-    fetch("http://localhost:3000/recipes")
+    fetch("http://localhost:5000/recipes")
       .then((res) => res.json())
       .then((data) => setRecipes(data));
 
     // fetching-2: inside useEffect by async-await+fetch
     const load = async () => {
-      const res4Categories = await fetch("http://localhost:3000/categories");
+      const res4Categories = await fetch("http://localhost:5000/categories");
       const data4Categories = await res4Categories.json();
       setCategories(data4Categories);
     };
